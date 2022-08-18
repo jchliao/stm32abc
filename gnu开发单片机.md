@@ -9,7 +9,9 @@
 1. exe安装
 2. zip安装
 
-exe安装可以在安装时把软件添加到环境变量。
+exe安装可以在安装时勾选把软件添加到环境变量。
+
+![image-20220818155609427](assets/image-20220818155609427.png)
 
 zip安装需要自行解压软件后，自己配置环境变量。
 
@@ -103,7 +105,7 @@ source [find target/stm32f4x.cfg]
 
 ### 调试器
 
-选Project下的Option，在Common选卡里面选Plug-in Module，下拉列表里面按需选调试器类型。一般正点原子的无线调试器是CMSIS DAP，Jlink OB就选Jlink。选完后点Configure，按左下角的Test Connection检查调试器是否正常连接。
+选Project下的Option，在Common选卡里面选Plug-in Module，下拉列表里面按需选调试器类型。正点原子的无线调试器是CMSIS DAP，Jlink OB就选Jlink。选完后点Configure，按左下角的Test Connection检查调试器是否正常连接。
 
 ![image-20220818144205411](assets/image-20220818144205411.png)
 
