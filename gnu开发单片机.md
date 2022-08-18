@@ -21,6 +21,11 @@ zip安装需要自行解压软件后，自己配置环境变量。
 
 这里下载最新版直接解压就可以，在这套工具链中不用配置环境变量也可以使用。
 
+OpenOCD 对 jlink 的适配不是很好 需要借助 UsbDriverTool 将 jlink 改为 winusb 模式
+
+[Automatic USB driver installer for FTDI and LibUSB drivers (visualgdb.com)](https://visualgdb.com/UsbDriverTool/)
+
+
 ## 安装FreeMASTER
 
 [FreeMASTER运行时调试工具_NXP 半导体](https://www.nxp.com.cn/design/software/development-software/freemaster-run-time-debugging-tool:FREEMASTER)
