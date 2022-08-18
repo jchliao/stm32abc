@@ -100,6 +100,18 @@ adapter speed 50000
 source [find target/stm32f4x.cfg]
 ```
 
+使用clion debug 时可能会报错
+
+修复方法
+
+```c
+  /* USER CODE BEGIN 1 */
+  //修复openocd初始化时钟问题
+    __HAL_RCC_HSI_ENABLE();
+    __HAL_RCC_SYSCLK_CONFIG(RCC_SYSCLKSOURCE_HSI);
+  /* USER CODE END 1 */
+```
+
 
 
 # FreeMASTER 使用方法
