@@ -94,35 +94,26 @@ graph
 使用jlink
 
 ```openocd
-#source [find interface/cmsis-dap.cfg]
 source [find interface/jlink.cfg]
-#interface cmsis-dap
 transport select swd
 adapter speed 50000
-#cmsis_dap_backend hid
-#adapter_khz 100
 source [find target/stm32f4x.cfg]
 ```
 
-使用daplink
+使用daplink和无线调试器
 ```openocd
 source [find interface/cmsis-dap.cfg]
-#interface cmsis-dap
 transport select swd
 adapter speed 50000
-#cmsis_dap_backend hid
-#adapter_khz 100
 source [find target/stm32f4x.cfg]
 ```
 
-使用无线调试器
+如果无线调试器无法识别
 ```openocd
 source [find interface/cmsis-dap.cfg]
-#interface cmsis-dap
 transport select swd
 adapter speed 50000
 cmsis_dap_backend hid
-#adapter_khz 100
 source [find target/stm32f4x.cfg]
 ```
 
