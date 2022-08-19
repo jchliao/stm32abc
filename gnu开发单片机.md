@@ -91,6 +91,8 @@ graph
 
 ![image-20220812171459969](assets/image-20220812171459969.png)
 
+使用jlink
+
 ```openocd
 #source [find interface/cmsis-dap.cfg]
 source [find interface/jlink.cfg]
@@ -98,6 +100,28 @@ source [find interface/jlink.cfg]
 transport select swd
 adapter speed 50000
 #cmsis_dap_backend hid
+#adapter_khz 100
+source [find target/stm32f4x.cfg]
+```
+
+使用daplink
+```openocd
+source [find interface/cmsis-dap.cfg]
+#interface cmsis-dap
+transport select swd
+adapter speed 50000
+#cmsis_dap_backend hid
+#adapter_khz 100
+source [find target/stm32f4x.cfg]
+```
+
+使用无线调试器
+```openocd
+source [find interface/cmsis-dap.cfg]
+#interface cmsis-dap
+transport select swd
+adapter speed 50000
+cmsis_dap_backend hid
 #adapter_khz 100
 source [find target/stm32f4x.cfg]
 ```
