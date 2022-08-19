@@ -1,7 +1,3 @@
-[TOC]
-
-
-
 # 安装软件
 
 ## 安装Arm GNU Toolchain
