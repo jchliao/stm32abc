@@ -91,6 +91,8 @@ graph
 
 ![image-20220812171459969](assets/image-20220812171459969.png)
 
+使用jlink
+
 ```openocd
 #source [find interface/cmsis-dap.cfg]
 source [find interface/jlink.cfg]
@@ -102,9 +104,32 @@ adapter speed 50000
 source [find target/stm32f4x.cfg]
 ```
 
-使用clion debug 时可能会报错
+使用daplink
+```openocd
+source [find interface/cmsis-dap.cfg]
+#interface cmsis-dap
+transport select swd
+adapter speed 50000
+#cmsis_dap_backend hid
+#adapter_khz 100
+source [find target/stm32f4x.cfg]
+```
 
-修复方法
+使用无线调试器
+```openocd
+source [find interface/cmsis-dap.cfg]
+#interface cmsis-dap
+transport select swd
+adapter speed 50000
+cmsis_dap_backend hid
+#adapter_khz 100
+source [find target/stm32f4x.cfg]
+```
+
+使用clion debug 时可能出问题，原因时openocd在下载时会配置时钟，与HAL 库发生了冲突，卡在了初始化中。
+
+## 修复方法
+在 main.c 中加入下面的代码
 
 ```c
   /* USER CODE BEGIN 1 */
