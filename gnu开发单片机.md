@@ -25,6 +25,8 @@ OpenOCD 对 jlink 的适配不是很好 需要借助 UsbDriverTool 将 jlink 改
 
 [Automatic USB driver installer for FTDI and LibUSB drivers (visualgdb.com)](https://visualgdb.com/UsbDriverTool/)
 
+注意安装路径不要包含空格
+
 
 ## 安装FreeMASTER
 
@@ -104,7 +106,7 @@ source [find target/stm32f4x.cfg]
 
 使用clion debug 时可能会报错
 
-修复方法
+修复方法（更改main.c）
 
 ```c
   /* USER CODE BEGIN 1 */
